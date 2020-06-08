@@ -1,0 +1,53 @@
+{% extends 'Education/base.html' %}
+{% block body %}
+{% load static %}
+
+
+<!-- section -->
+
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="full">
+                    <h3 style="margin-top:100px;">{{exam.name}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<div class="container">
+    <div>
+        <pre style="white-space: pre-wrap;">
+                {{exam.desc}}
+            </pre>
+    </div>
+</div>
+{% if rounds %}
+{% else %}
+<div class="container text-center">
+    <h1>No Post Found Contact Admin </h1>
+</div>
+
+{% endif %}
+
+<!-- cards -->
+<div class="container mb-3">
+    <div class="card-deck h-100">
+        {% for round in rounds %}
+
+        <div class="card">
+            <h3 class="card-header">{{round.name}}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{round.exam}}</h5>
+                    <p class="card-text">{{round.desc |slice:"0:150"}}......</p>
+                    <a href="{% url 'blogs' round.id %}" class="btn btn-primary">Explore !</a>
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- end cards -->
+{% endblock body %}

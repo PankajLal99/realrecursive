@@ -1,0 +1,289 @@
+{% extends 'Education/base.html' %}
+
+{% block title %}
+Real Recusive -Home     
+{% endblock title %}
+
+{% block body %}
+{% load static %}
+<!-- Start Banner -->
+<div class="ulockd-home-slider">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="pogoSlider" id="js-main-slider">
+                <div class="pogoSlider-slide" style="background-image:url({% static 'images/banner_img.png' %});">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="slide_text">
+                                    <h3><span span class="theme_color">You only have know one thing</span><br>you can
+                                        learn anything</h3>
+                                    <h4>Free Educations</h4>
+                                    <br>
+                                    <div class="full center">
+                                        <a class="contact_bt" href="{% url 'courses' %}">Start a Course</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pogoSlider-slide" style="background-image:url({% static 'images/banner_img.png' %});">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="slide_text">
+                                    <h3><span span class="theme_color">You only have know one thing</span><br>you can
+                                        learn anything</h3>
+                                    <h4>Free Educations</h4>
+                                    <br>
+                                    <div class="full center">
+                                        <a class="contact_bt" href="{% url 'courses' %}">Start a Course</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- .pogoSlider -->
+        </div>
+    </div>
+</div>
+<!-- End Banner -->
+<!-- section -->
+<div class="section tabbar_menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab_menu">
+                    <ul>
+                        <li><a href="#"><span class="icon"><img src="{% static 'images/i1.png' %}"
+                                        alt="#" /></span><span>Company Life</span></a></li>
+                        <li><a href="#"><span class="icon"><img src="{% static 'images/i2.png' %}"
+                                        alt="#" /></span><span>Education</span></a></li>
+                        <li><a href="#"><span class="icon"><img src="{% static 'images/i3.png' %}"
+                                        alt="#" /></span><span>IOT</span></a></li>
+                        <li><a href="https://www.instagram.com/invites/contact/?i=niqckfuw8nxc&utm_content=26zggmd" target="_blank"><span class="icon"><img src="{% static 'images/i4.png' %}"
+                                        alt="#" /></span><span>Social</span></a></li>
+                        <li><a href="https://www.google.com/maps?q=bhopal+location&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiJ2sSwyu_pAhWDeisKHQvED5MQ_AUoAXoECCYQAw" target="_blank"><span class="icon"><img src="{% static 'images/i5.png' %}"
+                                        alt="" /></span><span>Location</span></a></li>
+                        <li><a href="https://t.me/good_coders" target="_blank"><span class="icon"><img src="{% static 'images/i6.png' %}"
+                                        alt="" /></span><span>Reach us</span></a></li>
+                        <li><a href="https://wa.me/919009747829" target="_blank"><span class="icon"><img src="{% static 'images/i7.png' %}"
+                                        alt="" /></span><span>Whatsapp</span></a></li>
+                                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end section -->
+<!-- section -->
+<div class="section margin-top_50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 layout_padding_2">
+                <div class="full">
+                    <div class="heading_main text_align_left">
+                        <h2><span>Welcome To</span> Real Recursive</h2>
+                    </div>
+                    <div class="full">
+                        <p>How many times were you frustrated while looking out for a good collection of
+                            programming/algorithm/interview questions? What did you expect and what did you get? This
+                            portal has been created to provide well written, well thought and well explained solutions
+                            for selected questions.</p>
+                    </div>
+                    <div class="full">
+                        <a class="hvr-radial-out button-theme" href="{% url 'about' %}">About more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="full">
+                    <img src="{% static 'images/img2.png'%}" alt="#" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end section -->
+<!-- section -->
+<div class="section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full">
+                    <div class="heading_main text_align_center">
+                        <h2><span>Popular </span>Courses</h2>
+                    </div>
+                </div>
+            </div>
+            {% for post in data %}
+            <div class="col-md-4">
+                <div class="full blog_img_popular">
+                    <img class="img-responsive" src="{{post.photo.url}}" height="200px" alt="#" />
+                    <h4>{{post}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- end section -->
+<!-- section -->
+<div class="section margin-top_50 silver_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="full float-right_img">
+                    <img src="{% static 'images/img6.png' %}" alt="#" />
+                </div>
+            </div>
+            <div class="col-md-6 layout_padding_2">
+                <div class="full">
+                    <div class="heading_main text_align_left">
+                        <h2><span>How to begin with Competitive Programming?</h2>
+                    </div>
+                    <div class="full">
+                        <p>Generally competitive programming is a mind sport where everyone showcase his/her skills of
+                            problem solving under various constraints(that force everyone to think deeply or
+                            efficiently). Anyone who does competitive programming can enhance his/her problem solving
+                            approaches.You will learn how to approach a problem with the best of the best possible ways,
+                            you will learn how to analytically think and solve a problem and analyze it's space and time
+                            complexity.</p>
+                    </div>
+                    <div class="full">
+                        <a class="hvr-radial-out button-theme" href="#">Coming Soon!!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end section -->
+<!-- section -->
+<div class="section layout_padding padding_bottom-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="full">
+                    <div class="heading_main text_align_left">
+                        <h2><span>Overcome the Coding Fear</span></h2>
+                    </div>
+                    <div class="full">
+                        <p>Start with fundamentals: one should start working with basic fundamentals and build simpler
+                            static or dynamic web page with acquired knowledge.
+                            Learn approach to build knowledge applying analogies: Using previous point of reference with
+                            acquired knowledge is the easiest way to learn and understand new and complex logical
+                            concepts.
+                            Start little: Be confident to start with a small as Google was not built in a day and
+                            operating system was not programmed in a week. So begin with a little web pages helps to
+                            build up confidence is a way to overcome the terror of programming.
+                            Learn one programming language before moving into another: Focus on learning one programming
+                            language firstly. Don’t run after the new framework.Make yourself comfortable with the basic
+                            knowledge of the same then only jumped into another language.
+                            Trust the methodologies: don’t rush about the big pictures, trust the methodologies and
+                            learn each step in a sequence. Focus on the path and keep your eye fixed on the aim.</p>
+                    </div>
+                    <div class="full">
+                        <a class="hvr-radial-out button-theme" href="#">See More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="full">
+                    <img class="img-responsive" src="{% static 'images/img7.png' %}" alt="#" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end section -->
+<!-- section -->
+<div class="section layout_padding padding_bottom-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full">
+                    <div class="heading_main text_align_center">
+                        <h2><span>4 Top Tips for Coding</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="full blog_img_popular">
+                                        <img class="img-responsive" src="{% static 'images/img9.jpg' %}" alt="#" />
+                                        <h4>Always play with the code while learning</h4>
+                                        <p>With every new subject, the sooner you start playing with the code, the
+                                            faster you will learn the given concepts. Even if you blaze through an
+                                            entire chapter of reading and a topic like for loops seems straightforward –
+                                            so a monkey could do it – you’ll still be scratching your head when tasked
+                                            to implement the code for the first time</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="full blog_img_popular">
+                                        <img class="img-responsive" src="{% static 'images/img8.jpg' %}" alt="#" />
+                                        <h4>Code by hand</h4>
+                                        <p>For college exams and technical interviews – a critical component of the job
+                                            interview process – you will have to code-by-hand, because not only is this
+                                            good for learning, but it’s universally known to be the ultimate test for a
+                                            programmer’s proficiency</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="full blog_img_popular">
+                                        <img class="img-responsive" src="{% static 'images/img9_2.jpg' %}" alt="#" />
+                                        <h4>Don’t just read the sample code. Tinker with it!</h4>
+                                        <p>Reading is not the same as understanding, and actually trying to write the
+                                            code yourself, or at least running it, will facilitate the learning process
+                                            much more.</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="full blog_img_popular">
+                                        <img class="img-responsive" src="{% static 'images/img8_2.jpg' %}" alt="#" />
+                                        <h4>Take breaks when debugging
+                                        </h4>
+                                        <p> consider taking a break to clear your mind and return later. In the
+                                            meantime, the bug won’t be going anywhere, and you’ll at least restore some
+                                            needed sanity to improve productivity.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end section -->
+
+
+{% endblock body %}

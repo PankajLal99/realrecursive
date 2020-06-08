@@ -1,0 +1,50 @@
+{% extends 'Education/base.html' %}
+
+{% block title %}
+Real Recusive - Blogs     
+{% endblock title %}
+
+{% block body %}
+{% load static %}
+<!-- section -->
+
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="full">
+                    <h3 style="margin-top:100px;">{{name}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<div class="container mt-2">
+    <pre style="white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;font-size: large;" class="align-center">
+        {{name.desc}}
+    </pre>
+
+<!-- cards -->
+<div class="row row-cols-1 row-cols-md-3">
+    
+        {% for blog in blogs %}
+        <div class="col mb-4">
+            <div class="card  h-100">
+                <img src="{% static 'images/code.jpg' %}"  class="card-img-top" alt="image">
+              <div class="card-body">
+                <h5 class="card-title">{{blog.name}}</h5>
+                <p class="card-text">{{blog.desc|slice:"0:30"}}...</p>
+                <p class="card-text"> <a href="{% url 'view' blog.id %}" class="btn btn-primary">Solution</a></p>
+              </div>
+            </div>
+        </div>
+
+
+
+        {% endfor %}
+    </div>
+</div>
+<!-- end cards -->
+
+{% endblock body %}
