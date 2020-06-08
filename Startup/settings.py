@@ -25,7 +25,7 @@ SECRET_KEY = 'wx3ne2(kc@zi#-9wu*y*oh99^v!auk25_%eia9(lm=5xt=c=9v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','realrecursive.com','www.realrecursive.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,8 +43,8 @@ DEBUG_PROPAGATE_EXCEPTIONS = False
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-# SECURE_REFERRER_POLICY = True
-SECURE_SSL_REDIRECT = True
+# # SECURE_REFERRER_POLICY = True
+# SECURE_SSL_REDIRECT = Truerem
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -88,21 +88,6 @@ DATABASES = {
 }
 
 
-#########
-# CACHE #
-#########
-
-# The cache backends to use.
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-    }
-}
-CACHE_MIDDLEWARE_KEY_PREFIX = ''
-CACHE_MIDDLEWARE_SECONDS = 600
-CACHE_MIDDLEWARE_ALIAS = 'default'
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -142,7 +127,7 @@ USE_TZ = True
 
 #static Setttings
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 #media settings 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
