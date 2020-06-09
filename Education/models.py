@@ -41,3 +41,11 @@ class contact(models.Model):
     
     def __str__(self):
         return str(self.email)
+
+class StudyMaterial(models.Model):
+    name=models.CharField(max_length=100)
+    desc=models.TextField()
+    link=models.CharField(max_length=500)
+
+    def __str__(self):
+        return str(self.name)

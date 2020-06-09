@@ -52,3 +52,11 @@ def view(request,pk):
         'data':data,
     }
     return render(request,'Education/viewblog.html',context)
+# ######################################################################**********************
+
+def downloads(request):
+    data=models.StudyMaterial.objects.all()
+    context={
+        'data':data
+    }
+    return render (request,'Education/download.html',context)
