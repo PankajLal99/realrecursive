@@ -49,3 +49,15 @@ class StudyMaterial(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+class Course(models.Model):
+    name=models.CharField(max_length=100)
+    desc=models.TextField()
+    photo=models.ImageField(upload_to='images')
+    duration=models.CharField(max_length=100)
+    startdate=models.CharField(max_length=100)
+    trainer=models.CharField(max_length=100,blank=True, null=True)
+    link=models.CharField(max_length=100)
+
+    def __str__(self):
+        return str(self.name)

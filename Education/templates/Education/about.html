@@ -1,82 +1,229 @@
 {% extends 'Education/base.html' %}
 
 {% block title %}
-Real Recusive -About Us     
+Real Recusive -About Us
 {% endblock title %}
 
 {% block body %}
 {% load static %}
 
-	<!-- section -->
-	
-	<section class="inner_banner">
-	  <div class="container">
-	      <div class="row">
-		      <div class="col-12">
-			     <div class="full">
-				     <h3 style="margin-top:100px;">About us</h3>
-				 </div>
-			  </div>
-		  </div>
-	  </div>
-	</section>
-	
-	<!-- end section -->
-   
-	<!-- section -->
-    <div class="section margin-top_50">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 layout_padding_2">
+<!-- section -->
+
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="full">
+                    <h3>About us</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end section -->
+
+<!-- section -->
+<div class="section margin-top_50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 layout_padding_2">
+                <div class="full">
+                    <div class="heading_main text_align_left">
+                        <h2><span>Welcome To </span>Real Recursive</h2>
+                    </div>
                     <div class="full">
-                        <div class="heading_main text_align_left">
-						   <h2><span>Welcome To</span>Real Recursive</h2>
-                        </div>
-						<div class="full">
-						  <p>How many times were you frustrated while looking out for a good collection of
+                        <p>How many times were you frustrated while looking out for a good collection of
                             programming/algorithm/interview questions? What did you expect and what did you get? This
                             portal has been created to provide well written, well thought and well explained solutions
                             for selected questions.</p>
-						</div>
-						<div class="full">
-						   
-						</div>
+                    </div>
+                    <div class="full">
+
                     </div>
                 </div>
-				<div class="col-md-6">
-                    <div class="full">
-                        <img src="{% static 'images/img2.p' %}ng" alt="#" />
+            </div>
+            <div class="col-md-6">
+                <div class="full">
+                    <img src="{% static 'images/img2.p' %}ng" alt="#" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end section -->
+<!-- section -->
+<div class="section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full">
+                    <div class="heading_main text_align_center">
+                        <h2><span>Team</span></h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-	<!-- end section -->
-	<!-- section -->
-    <div class="section layout_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="full">
-                        <div class="heading_main text_align_center">
-						   <h2><span>Team</span></h2>
+</div>
+<!-- Team member -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                <div class="mainflip">
+                    <div class="frontside">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <p><img class=" img-fluid" src="{% static 'images/pankaj.jpeg' %}" alt="card image"></p>
+                                <h4 class="card-title">Pankaj Lal</h4>
+                                <p class="card-text">Website Developer</p>
+                                <p class="card-text">Programmer</p>
+                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                            </div>
                         </div>
-					  </div>
-                </div>
-				<div class="col-md-6">
-                    <div class="full blog_img_popular">
-                       <img class="img-responsive" src="{% static 'images/kapil.jpg' %}" height="450px" alt="#" /> 
-					   <h4>Kapil Mewada</h4>
                     </div>
-                </div>
-				<div class="col-md-6">
-                    <div class="full blog_img_popular">
-                        <img class="img-responsive" src="{% static 'images/pankaj.jpeg' %}" height="450px" alt="#" />
-						<h4>Pankaj Lal</h4>
+                    <div class="backside">
+                        <div class="card">
+                            <div class="card-body text-center mt-4">
+                                <h4 class="card-title">Pankaj Lal</h4>
+                                <p class="card-text">
+                                    I am a Passionate Web Developer ,Love to take day to day challanges.
+                                    Always work hard to push my limits beyond my last one.
+                                </p>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-skype"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-google"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
+        <!-- ./Team member -->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                <div class="mainflip">
+                    <div class="frontside">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <p><img class=" img-fluid" src="{% static 'images/kapil.jpg' %}" alt="card image"></p>
+                                <h4 class="card-title">Kapil Mewada</h4>
+                                <p class="card-text">Pythonista</p>
+                                <p class="card-text">NLP Expert</p>
+                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="backside">
+                        <div class="card">
+                            <div class="card-body text-center mt-4">
+                                <h4 class="card-title">Kapil Mewada</h4>
+                                <p class="card-text">
+                                    I am NLP Expert with 7 months experience @Emphasis Corp. 
+                                    I love to code and try to learn new Technologies every day.
+                                </p>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-skype"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-google"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./Team member -->
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                <div class="mainflip">
+                    <div class="frontside">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <p><img class=" img-fluid" src="{% static 'images/you.png' %}" alt="card image"></p>
+                                <h4 class="card-title">You are next!!</h4>
+                                <p class="card-text">We are Hiring</p>
+                                <p class="card-text">Contact Us</p>
+                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="backside">
+                        <div class="card">
+                            <div class="card-body text-center mt-4">
+                                <h4 class="card-title">You are next!!</h4>
+                                <p class="card-text">
+
+                                </p>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-skype"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                            <i class="fa fa-google"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- ./Team member -->
     </div>
-	<!-- end section -->
-    {% endblock body %}
+</div>
+<!-- end section -->
+{% endblock body %}

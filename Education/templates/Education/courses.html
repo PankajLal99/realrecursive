@@ -1,44 +1,50 @@
 {% extends 'Education/base.html' %}
 
 {% block title %}
-Real Recusive -Courses     
+Real Recusive - Courses
 {% endblock title %}
 
 {% block body %}
 {% load static %}
+<!-- section -->
 
-    <!-- section -->
-
-    <section class="inner_banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="full">
-                        <h3 style="margin-top:100px;">Courses</h3>
-                    </div>
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="full">
+                    <h3>Courses</h3>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- end section -->
-
-    
-    <!-- cards -->
-    <div class="container mb-3">
-        <div class="card-deck h-100">
-            {% for i in data %}
-            <div class="card">
-                <img src="{{i.photo.url}}" class="card-img-top" height="250px" alt="image">
-                <div class="card-body">
-                    <h5 class="card-title"><b>{{i.name}}</b></h5>
-                    <p class="card-text ">{{i.desc|slice:"0:100"}}......</p>
-                </div>
-                <div class="card-footer">
-                    <a href="{% url 'archive' i.id %}" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-            {% endfor %}
         </div>
     </div>
-    <!-- end cards -->
+</section>
+<!-- end section -->
+<!-- body -->
+<div class="container my-3">
+    <div class="row row-cols-1 row-cols-md-3">
+        {% for c in data %}
+
+        <div class="col mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{c.photo.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{c.name}}</h5>
+                    <p class="card-text">{{c.desc|slice:"0:50"}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Duration : {{c.duration}}</li>
+                    <li class="list-group-item">Start Date : {{c.startdate}}</li>
+                    <li class="list-group-item">Trainer : {{c.trainer}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="{{c.link}}" target="_blank" class="btn btn-success">Register Now</a>
+                    <a href="{% url 'viewcourses' c.id %}" class="btn btn-info">Read More</a>
+                </div>
+            </div>
+        </div>   
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock body %}

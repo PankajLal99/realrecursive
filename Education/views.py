@@ -22,12 +22,12 @@ def contact(request):
         c=models.contact(name=name,email=email,phno=phno,msg=msg)
         c.save()
     return render(request,'Education/contact.html')
-def courses(request):
+def studymaterial(request):
     data=models.Exam.objects.all()
     context={
         'data':data,
     }
-    return render(request,'Education/courses.html',context)
+    return render(request,'Education/studymaterial.html',context)
 def archive(request,pk):
     exam=models.Exam.objects.get(pk=pk)
     rounds=models.Round.objects.filter(exam=exam)
@@ -60,3 +60,17 @@ def downloads(request):
         'data':data
     }
     return render (request,'Education/download.html',context)
+
+def courses(request):
+    data=models.Course.objects.all()
+    context={
+        'data':data,
+    }
+    return render (request,'Education/courses.html',context)
+
+def viewcourses(request,pk):
+    data=models.Course.objects.get(pk=pk)
+    context={
+        'data':data,
+    }
+    return render (request,'Education/viewcourses.html',context)

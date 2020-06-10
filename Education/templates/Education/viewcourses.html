@@ -1,0 +1,32 @@
+{% extends 'Education/base.html' %}
+
+{% block title %}
+Real Recusive - Courses
+{% endblock title %}
+
+{% block body %}
+{% load static %}
+<!-- section -->
+
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="full">
+                    <h3>{{data.name}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- body -->
+<div class="container my-3">
+    <img src="{{data.photo.url}}" style="max-height:80%; max-width:100%;" alt="Images">
+    <h2 class="align center my-2"><b>Description</b></h2>
+    <pre style="font-family: Arial, Helvetica, sans-serif; font-size: large;">{{data.desc}}</pre>
+    <div class="align center">
+        <a href="{{data.link}}" target="_blank" class="btn btn-outline-success">Register Now !!</a>
+    </div>
+</div>
+{% endblock body %}

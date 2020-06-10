@@ -9,8 +9,9 @@ Real Recusive - Downloads
 <!-- body -->
 <div class="container">
     {% if data %}
-    <div class="card-deck">
+    <div class="row row-cols-1 row-cols-md-3">
     {% for blog in data %}
+    <div class="col mb-4">
     <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{blog.name}}</h5>
@@ -20,6 +21,7 @@ Real Recusive - Downloads
             <a href="{{blog.link}}" class="btn btn-success">Download</a>
         </div>
       </div>
+    </div>
     {% endfor %}
     {% else %}
     <h1 class="align-center">No Downloads Found!! Contact Us</h1>

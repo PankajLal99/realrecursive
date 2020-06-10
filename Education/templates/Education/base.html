@@ -33,7 +33,7 @@
     {% load static %}
     <link rel="icon" href="{% static 'images/logo.png' %}" type="image/gif" sizes="16x16">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <!-- Pogo Slider CSS -->
     <link rel="stylesheet" href="{% static 'css/pogo-slider.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/prism.css' %}" />
@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/teamcards.css' %}" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
 
@@ -77,9 +78,10 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
-                        <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
                         <li><a class="nav-link" href="{% url 'courses' %}">Courses</a></li>
+                        <li><a class="nav-link" href="{% url 'study' %}">Study Material</a></li>
                         <li><a class="nav-link" href="{% url 'contact' %}">Contact us</a></li>
+                        <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
                     </ul>
                 </div>
                 <div class="search-box">
@@ -149,7 +151,7 @@
                         <h3>Contact us</h3>
                         <ul class="full">
                             <li><img src="{% static 'images/i5.png' %}"><span>Bhopal<br>India</span></li>
-                            <li><img src="{% static 'images/i6.png' %}"><span>kapilrajpoot21@gmail.com</span></li>
+                            <li><img src="{% static 'images/i6.png' %}"><span>info@realrecursive.com</span></li>
                             <li><img src="{% static 'images/i7.png' %}"><span>9893731577</span></li>
                             <li><img src="{% static 'images/i7.png' %}"><span>7000977422</span></li>
                         </ul>
@@ -175,9 +177,10 @@
     <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
 
     <!-- ALL JS FILES -->
-    <script src="{% static 'js/jquery.min.js' %}"></script>
+    
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/prism.js' %}"></script>
     <!-- ALL PLUGINS -->
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
