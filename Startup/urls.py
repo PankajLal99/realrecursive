@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
+from classroom.views import classroom, students, teachers
 from django.conf.urls.static import static
 
 admin.site.site_header = "Education Admin Panel"
@@ -25,4 +26,9 @@ admin.site.index_title = "Welcome to Admin Portal"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Education.urls')),
+    path('quiz/', include('classroom.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', classroom.SignUpView.as_view(), name='signup'),
+    path('accounts/signup/student/', students.StudentSignUpView.as_view(), name='student_signup'),
+    path('accounts/signup/teacher/', teachers.TeacherSignUpView.as_view(), name='teacher_signup'),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

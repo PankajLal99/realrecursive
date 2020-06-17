@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+  <meta name="google-site-verification" content="QUY00UEKc4JKJviJI5OQrZfPTYJB3GKbfTHHZglEDFM" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168786372-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-168786372-1');
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Site Metas -->
+  <title>
+    {% block title %}
+
+    {% endblock title %}
+  </title>
+  <meta name="keywords" content="Preprations Coding">
+  <meta name="description" content="This is Educational AllinOne Website For Learners">
+  <meta name="author" content="Pankaj Lal And Kapil Mewada">
+
+  {% load static %}
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/gif" sizes="16x16">
+  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Pogo Slider CSS -->
+  <link rel="stylesheet" href="{% static 'css/pogo-slider.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/prism.css' %}" />
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/teamcards.css' %}" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+
+
+
+</head>
+
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+  <!-- LOADER -->
+  <div id="preloader">
+    <div class="loader">
+      <img src="{% static 'images/loader.gif' %}" alt="#" />
+    </div>
+  </div>
+  <!-- end loader -->
+  <!-- END LOADER -->
+
+  <!-- Start header -->
+  <header class="top-header">
+    <nav class="navbar header-nav navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}"
+            style="max-width:50px;max-height: 50px;" alt="image"> Real Recursive</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd"
+          aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+          <ul class="navbar-nav">
+            <li><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
+            <li><a class="nav-link" href="{% url 'courses' %}">Courses</a></li>
+            <li><a class="nav-link" href="{% url 'study' %}">Study Material</a></li>
+            <li><a class="nav-link" href="{% url 'contact' %}">Contact us</a></li>
+            <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
+          </ul>
+        </div>
+          <span>
+            {% if user.is_authenticated %}
+            <p class="pt-3"><strong>{{ user.username }}{% if user.is_student %} -
+                {{user.student.score}}{% endif %}</strong> | <a href="{% url 'logout' %}" class="btn btn-danger">Log
+                out</a>.</p>
+            {% else %}
+            <a href="{% url 'login' %}" class="btn btn-info" role="button">Log in</a>
+            <a href="{% url 'signup' %}" class="btn btn-primary m-2" role="button">Sign up</a>
+            {% endif %}</span>
+         
+      </div>
+    </nav>
+  </header>
+  <!-- End header -->
+  <div style="margin-top: 85px;">
+    <!-- body -->
+    {% block content %}
+
+    {% endblock content %}
+  </div>
+  <!-- body end -->
+
+  <!-- Start Footer -->
+  <footer class="footer-box mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+          <div class="footer_blog">
+            <div class="full margin-bottom_30">
+
+            </div>
+            <div class="full white_fonts">
+              <p>Practice is a well designed interface intended to be “One stop”’ for practicing all kinds
+                of coding problems. It is especially designed to practice coding problems on the topic
+                you wish to. Be it “an interview based question” or “a simple array program”, we plan to
+                keep all of them under one umbrella.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+          <div class="footer_blog footer_menu white_fonts">
+            <h3>Quick links</h3>
+            <ul>
+              <li><a href="#">> Join Us</a></li>
+              <li><a href="#">> Maintenance</a></li>
+              <li><a href="#">> Language Packs</a></li>
+              <li><a href="#">> LearnPress</a></li>
+              <li><a href="#">> Release Status</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+          <div class="footer_blog full white_fonts">
+            <h3>Newsletter</h3>
+            <p>Get Updated With Us !!</p>
+            <div class="newsletter_form">
+              <form method='POST'>
+                {% csrf_token %}
+                <input type="email" placeholder="Your Email" name="email" required />
+                <button>Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+          <div class="footer_blog full white_fonts">
+            <h3>Contact us</h3>
+            <ul class="full">
+              <li><img src="{% static 'images/i5.png' %}"><span>Bhopal<br>India</span></li>
+              <li><img src="{% static 'images/i6.png' %}"><span>info@realrecursive.com</span></li>
+              <li><img src="{% static 'images/i7.png' %}"><span>9893731577</span></li>
+              <li><img src="{% static 'images/i7.png' %}"><span>7000977422</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="crp">© Copyrights 2020 design by TechInfoSolutions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+  <!-- ALL JS FILES -->
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/prism.js' %}"></script>
+  <!-- ALL PLUGINS -->
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/jquery.pogo-slider.min.js' %}"></script>
+  <script src="{% static 'js/slider-index.js' %}"></script>
+  <script src="{% static 'js/smoothscroll.js' %}"></script>
+  <script src="{% static 'js/isotope.min.js' %}"></script>
+  <script src="{% static 'js/images-loded.min.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+
+</html>

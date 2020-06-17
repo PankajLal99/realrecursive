@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for message in messages %}
+<div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+</div>
+{% endfor %}
+  <div class="jumbotron">
+    <div class="container">
+      <p class="lead">Real Recursive Online Quiz Maker
+        This is Online Testing software provides the best Quiz maker tool for teachers & businesses.
+        Used globally for business & enterprise training Tests, pre-employment assessments, online certifications
+        and compliance, recruitment & health and safety quizzes, schools, universities, distance learning, lead
+        generation, online courses, E-Learning, practice Tests & more.</p>
+    </div>
+  </div>
+{% endblock %}

@@ -86,12 +86,15 @@
                         <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
                     </ul>
                 </div>
-                <div class="search-box">
-                    <input type="text" class="search-txt" placeholder="Search">
-                    <a class="search-btn">
-                        <img src="{% static 'images/search_icon.png' %}" alt="#" />
-                    </a>
-                </div>
+                <span>
+                    {% if user.is_authenticated %}
+                    <p class="pt-3"><strong>{{ user.username }}{% if user.is_student %} -
+                        {{user.student.score}}{% endif %}</strong> | <a href="{% url 'logout' %}" class="btn btn-danger">Log
+                        out</a>.</p>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-info" role="button">Log in</a>
+                    <a href="{% url 'signup' %}" class="btn btn-primary m-2" role="button">Sign up</a>
+                    {% endif %}</span>
             </div>
         </nav>
     </header>

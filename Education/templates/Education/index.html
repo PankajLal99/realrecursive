@@ -124,7 +124,7 @@ Real Recusive -Home
             <div class="col-md-4">
                 <div class="full blog_img_popular">
                     <img class="img-responsive" src="{{post.photo.url}}" height="200px" alt="#" />
-                    <h4>{{post}}</h4>
+                    <h4><a href="{% url 'archive' post.id %}">{{post}}</a> </h4>
                 </div>
             </div>
             {% endfor %}
